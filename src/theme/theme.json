@@ -1,0 +1,50 @@
+{
+  "colorSchemes": {
+    "light": {
+      "palette": {
+        "success": {
+          "main": "#2E7D32"
+        },
+        "error": {
+          "main": "#D32F2F"
+        }
+      }
+    },
+    "dark": {
+      "palette": {
+        "success": {
+          "main": "#66BB6A"
+        },
+        "error": {
+          "main": "#F44336"
+        }
+      }
+    }
+  },
+  "components": {
+    "MuiButton": {
+      "styleOverrides": {
+        "root": {
+          "&.MuiButton-sizeLarge.MuiButton-containedPrimary": {
+            "&:not(.Mui-disabled):not(.Mui-focusVisible):": {
+              "padding": "8px 22px",
+              "borderRadius": "var(--mui-shape-none)",
+              "background": "var(--mui-palette-success-main)",
+              "boxShadow": "var(--mui-shadows-2)",
+              "opacity": "1"
+            }
+          },
+          "&.MuiButton-sizeLarge.MuiButton-containedSecondary": {
+            "&:not(.Mui-disabled):not(.Mui-focusVisible):not(:hover)": {
+              "padding": "8px 22px",
+              "borderRadius": "var(--mui-shape-none)",
+              "background": "var(--mui-palette-error-main)",
+              "boxShadow": "var(--mui-shadows-2)",
+              "opacity": "1"
+            }
+          }
+        }
+      }
+    }
+  }
+}
