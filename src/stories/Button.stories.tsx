@@ -1,7 +1,8 @@
 import { Meta, StoryFn } from "@storybook/react";
 import { Button } from "@mui/material";
 import withThemeProvider from "./withThemeProvider";
-Button.displayName = "Button";
+// Button.displayName = "Button";
+(Button as React.ForwardRefExoticComponent<any>).displayName = "Button";
 
 // Storybook meta information
 export default {
