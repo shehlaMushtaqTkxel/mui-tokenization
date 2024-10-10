@@ -4,7 +4,8 @@ import withThemeProvider from "./withThemeProvider";
 import { useState, MouseEvent, useRef } from "react";
 
 (Popper as React.ForwardRefExoticComponent<any>).displayName = "Popper";
-
+(Button as React.ForwardRefExoticComponent<any>).displayName = "Button";
+(Paper as React.ForwardRefExoticComponent<any>).displayName = "Paper";
 // Storybook meta information
 export default {
   title: "Components/Popper",
