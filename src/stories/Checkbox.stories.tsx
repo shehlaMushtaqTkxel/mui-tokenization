@@ -7,6 +7,8 @@ import withThemeProvider from "./withThemeProvider";
 (Checkbox as React.ForwardRefExoticComponent<any>).displayName = "Checkbox";
 (FormControlLabel as React.ForwardRefExoticComponent<any>).displayName =
   "FormControlLabel";
+(Favorite as React.FunctionComponent<any>).displayName = "Favorite"; // Setting display name for debugging
+(FavoriteBorder as React.FunctionComponent<any>).displayName = "FavoriteBorder"; // Setting display name for debugging
 
 export default {
   title: "Components/Checkbox",
