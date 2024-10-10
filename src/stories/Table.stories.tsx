@@ -1,4 +1,3 @@
-// table.stories.tsx
 import React, { useState } from "react";
 import {
   Table,
@@ -22,6 +21,7 @@ import withThemeProvider from "./withThemeProvider";
 (TableCell as React.ForwardRefExoticComponent<any>).displayName = "TableCell";
 (TableContainer as React.ForwardRefExoticComponent<any>).displayName =
   "TableContainer";
+(TableHead as React.FC).displayName = "TableHead";
 (TableHead as React.ForwardRefExoticComponent<any>).displayName = "TableHead";
 (TableRow as React.ForwardRefExoticComponent<any>).displayName = "TableRow";
 (Paper as React.ForwardRefExoticComponent<any>).displayName = "Paper";
@@ -211,51 +211,30 @@ const TableTemplate: StoryFn<any> = ({
                 )
               : sortedRows
             ).map((row, index) => (
-              <React.Fragment key={row.name}>
-                <TableRow>
-                  {collapsible && (
-                    <TableCell>
-                      <IconButton
-                        aria-label="expand row"
-                        size="small"
-                        onClick={() => setOpen(open === index ? null : index)}
-                      >
-                        {open === index ? (
-                          <KeyboardArrowUp />
-                        ) : (
-                          <KeyboardArrowDown />
-                        )}
-                      </IconButton>
-                    </TableCell>
-                  )}
-                  <TableCell component="th" scope="row">
-                    {row.name}
-                  </TableCell>
-                  <TableCell align="right">{row.calories}</TableCell>
-                  <TableCell align="right">{row.fat}</TableCell>
-                  <TableCell align="right">{row.carbs}</TableCell>
-                  <TableCell align="right">{row.protein}</TableCell>
-                </TableRow>
+              <TableRow key={index}> {/* Replaced React.Fragment with TableRow */}
                 {collapsible && (
-                  <TableRow>
-                    <TableCell
-                      style={{ paddingBottom: 0, paddingTop: 0 }}
-                      colSpan={6}
+                  <TableCell>
+                    <IconButton
+                      aria-label="expand row"
+                      size="small"
+                      onClick={() => setOpen(open === index ? null : index)}
                     >
-                      <Collapse
-                        in={open === index}
-                        timeout="auto"
-                        unmountOnExit
-                      >
-                        <Paper sx={{ padding: 2 }}>
-                          <h4>Details:</h4>
-                          <p>{row.details}</p>
-                        </Paper>
-                      </Collapse>
-                    </TableCell>
-                  </TableRow>
+                      {open === index ? (
+                        <KeyboardArrowUp />
+                      ) : (
+                        <KeyboardArrowDown />
+                      )}
+                    </IconButton>
+                  </TableCell>
                 )}
-              </React.Fragment>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                <TableCell align="right">{row.calories}</TableCell>
+                <TableCell align="right">{row.fat}</TableCell>
+                <TableCell align="right">{row.carbs}</TableCell>
+                <TableCell align="right">{row.protein}</TableCell>
+              </TableRow>
             ))}
           </TableBody>
         </Table>

@@ -12,6 +12,10 @@ import React from "react";
 
 // Display name for the Accordion component
 (Accordion as React.FC).displayName = "Accordion";
+(AccordionSummary as React.FC).displayName = "AccordionSummary";
+(AccordionDetails as React.FC).displayName = "AccordionDetails";
+(Typography as React.FC).displayName = "Typography";
+(IconButton as React.FunctionComponent<any>).displayName = "IconButton";
 
 // Storybook meta information
 export default {

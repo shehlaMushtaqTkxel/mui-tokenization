@@ -17,6 +17,15 @@ import { TransitionProps } from '@mui/material/transitions';
 
 // Display name for the Dialog component
 (Dialog as React.FC).displayName = "Dialog";
+(DialogContentText as React.FC).displayName = "DialogContentText";
+(DialogTitle as React.FC).displayName = "DialogTitle";
+(DialogContent as React.FC).displayName = "DialogContent";
+(DialogActions as React.FC).displayName = "DialogActions";
+(Button as React.FC).displayName = "Button";
+(TextField as React.FC).displayName = "TextField";
+(Slide as React.FC).displayName = "Slide";
+(Zoom as React.FC).displayName = "Zoom";
+(Grow as React.FC).displayName = "Grow";
 
 // Slide Transition Component
 const TransitionSlide = React.forwardRef(function Transition(

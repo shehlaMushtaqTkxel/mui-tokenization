@@ -2,7 +2,11 @@ import { Meta, StoryFn } from "@storybook/react";
 import { Select, MenuItem, FormControl, InputLabel, FormHelperText } from "@mui/material";
 import withThemeProvider from "./withThemeProvider";
 
-(Select as React.ForwardRefExoticComponent<any>).displayName = "Select";
+(Select as React.FC).displayName = "Select";
+(MenuItem as React.FC).displayName = "MenuItem";
+(FormControl as React.FC).displayName = "FormControl";
+(InputLabel as React.FC).displayName = "InputLabel";
+(FormHelperText as React.FC).displayName = "FormHelperText";
 
 // Storybook meta information
 export default {

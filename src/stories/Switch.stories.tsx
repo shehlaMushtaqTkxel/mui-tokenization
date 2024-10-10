@@ -4,6 +4,8 @@ import React from "react";
 import withThemeProvider from "./withThemeProvider";
 
 (Switch as React.ForwardRefExoticComponent<any>).displayName = "Switch";
+(FormControlLabel as React.FC).displayName = "FormControlLabel";
+(FormHelperText as React.FC).displayName = "FormHelperText";
 
 export default {
   title: "Components/Switch",

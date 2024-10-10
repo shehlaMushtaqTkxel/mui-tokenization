@@ -5,7 +5,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 // Sample options
 const options = ['Option 1', 'Option 2', 'Option 3'];
-
+(TextField as React.FC).displayName = "TextField";
+(Autocomplete as React.FC).displayName = "Autocomplete";
 // Default export for Storybook
 export default {
   title: 'Components/Autocomplete',

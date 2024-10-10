@@ -7,7 +7,8 @@ import withThemeProvider from "./withThemeProvider";
 (Avatar as React.ForwardRefExoticComponent<any>).displayName = "Avatar";
 (AvatarGroup as React.ForwardRefExoticComponent<any>).displayName =
   "AvatarGroup";
-
+(Avatar as React.FC).displayName = "Avatar";
+(Box as React.FC).displayName = "Box";
 export default {
   title: "Components/Avatar",
   component: Avatar,
