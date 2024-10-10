@@ -57,7 +57,7 @@ const Template: StoryFn<typeof Card> = (args) => (
       <CardMedia
         component="img"
         height="140"
-        image="https://via.placeholder.com/345x140"
+        image="https://mui.com/static/images/cards/paella.jpg"
         alt="Placeholder Image"
       />
     )}
