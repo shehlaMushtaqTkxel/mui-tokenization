@@ -1,4 +1,5 @@
-import { Meta, StoryFn } from "@storybook/react";
+// table.stories.tsx
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -12,11 +13,10 @@ import {
   Collapse,
   IconButton,
 } from "@mui/material";
-import React, { useState } from "react";
+import { Meta, StoryFn } from "@storybook/react";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
 import withThemeProvider from "./withThemeProvider";
 
-// Setting the display name for debugging purposes
 (Table as React.ForwardRefExoticComponent<any>).displayName = "Table";
 (TableBody as React.ForwardRefExoticComponent<any>).displayName = "TableBody";
 (TableCell as React.ForwardRefExoticComponent<any>).displayName = "TableCell";
@@ -31,6 +31,7 @@ import withThemeProvider from "./withThemeProvider";
   "TableSortLabel";
 (Collapse as React.ForwardRefExoticComponent<any>).displayName = "Collapse";
 (IconButton as React.ForwardRefExoticComponent<any>).displayName = "IconButton";
+(Paper as React.ForwardRefExoticComponent<any>).displayName = "Paper";
 
 export default {
   title: "Components/Table",
@@ -77,7 +78,6 @@ export default {
   },
 } as Meta<typeof Table>;
 
-// Sample data for the table
 const rows = [
   {
     name: "Cupcake",
@@ -121,7 +121,6 @@ const rows = [
   },
 ];
 
-// Shared Table Template (standard and collapsible)
 const TableTemplate: StoryFn<any> = ({
   collapsible,
   dense,
@@ -136,7 +135,7 @@ const TableTemplate: StoryFn<any> = ({
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [order, setOrder] = useState<"asc" | "desc">("asc");
   const [orderBy, setOrderBy] = useState("calories");
-  const [open, setOpen] = useState<number | null>(null); // State for collapsible rows
+  const [open, setOpen] = useState<number | null>(null);
 
   const handleRequestSort = (property: string) => {
     const isAsc = orderBy === property && order === "asc";
@@ -144,7 +143,7 @@ const TableTemplate: StoryFn<any> = ({
     setOrderBy(property);
   };
 
-  const handleChangePage = (event: unknown, newPage: number) => {
+  const handleChangePage = (_: unknown, newPage: number) => {
     setPage(newPage);
   };
 
@@ -155,7 +154,6 @@ const TableTemplate: StoryFn<any> = ({
     setPage(0);
   };
 
-  // Sort the data based on the comparator
   const sortedRows = sortable
     ? [...rows].sort((a, b) =>
         order === "asc" ? a[orderBy] - b[orderBy] : b[orderBy] - a[orderBy]
@@ -164,7 +162,7 @@ const TableTemplate: StoryFn<any> = ({
 
   return (
     <Paper sx={{ width: "100%", overflow: "hidden" }}>
-      <TableContainer component={Paper}>
+      <TableContainer>
         <Table
           stickyHeader={stickyHeader}
           size={size}
@@ -220,7 +218,7 @@ const TableTemplate: StoryFn<any> = ({
                       <IconButton
                         aria-label="expand row"
                         size="small"
-                        onClick={() => setOpen(open === index ? null : index)} // Toggle open state
+                        onClick={() => setOpen(open === index ? null : index)}
                       >
                         {open === index ? (
                           <KeyboardArrowUp />
@@ -238,7 +236,6 @@ const TableTemplate: StoryFn<any> = ({
                   <TableCell align="right">{row.carbs}</TableCell>
                   <TableCell align="right">{row.protein}</TableCell>
                 </TableRow>
-
                 {collapsible && (
                   <TableRow>
                     <TableCell
@@ -278,10 +275,9 @@ const TableTemplate: StoryFn<any> = ({
   );
 };
 
-// Default story for both standard and collapsible tables
 export const Default = TableTemplate.bind({});
 Default.args = {
-  collapsible: false, // Set to true for collapsible rows
+  collapsible: false,
   dense: false,
   stickyHeader: false,
   pagination: true,

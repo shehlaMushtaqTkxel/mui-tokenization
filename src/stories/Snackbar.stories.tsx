@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { Button, Snackbar, SnackbarOrigin, Alert, AlertProps } from "@mui/material";
+import { Button, Snackbar, Alert, AlertProps } from "@mui/material";
 import withThemeProvider from "./withThemeProvider";
 
 // Setting display names for better debugging

@@ -11,7 +11,6 @@ import {
   Slide,
   Zoom,
   Grow,
-  Typography,
 } from "@mui/material";
 import withThemeProvider from "./withThemeProvider";
 import { TransitionProps } from '@mui/material/transitions';

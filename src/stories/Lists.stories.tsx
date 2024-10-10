@@ -1,19 +1,26 @@
 import { Meta, StoryFn } from "@storybook/react";
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Divider from '@mui/material/Divider';
-import { Inbox as InboxIcon, Star as StarIcon, Mail as MailIcon, Drafts as DraftsIcon } from '@mui/icons-material';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import Divider from "@mui/material/Divider";
+import { Inbox, Star, Mail, Drafts } from "@mui/icons-material";
 import withThemeProvider from "./withThemeProvider";
-import { styled } from '@mui/system';
+import { styled } from "@mui/system";
 
 (List as React.FC).displayName = "List";
 (ListItem as React.FC).displayName = "ListItem";
+(ListItemIcon as React.FC).displayName = "ListItemIcon";
+(ListItemText as React.FC).displayName = "ListItemText";
+(Divider as React.FC).displayName = "Divider";
 
-// Styled component for a sticky subheader
-const StickySubheader = styled('li')(({ theme }) => ({
-  position: 'sticky',
+(Inbox as React.FunctionComponent<any>).displayName = "Inbox";
+(Mail as React.FunctionComponent<any>).displayName = "Mail";
+(Star as React.FunctionComponent<any>).displayName = "Star";
+(Drafts as React.FunctionComponent<any>).displayName = "Drafts";
+
+const StickySubheader = styled("li")(({ theme }) => ({
+  position: "sticky",
   top: 0,
   backgroundColor: theme.palette.background.paper,
   zIndex: 1,
@@ -42,32 +49,44 @@ export default {
 } as Meta<typeof List>;
 
 // Template for the List component
-const Template: StoryFn<{ dense: boolean; disablePadding: boolean; subheader: string }> = (args) => (
-  <List dense={args.dense} disablePadding={args.disablePadding} subheader={args.subheader ? <StickySubheader>{args.subheader}</StickySubheader> : null}>
+const Template: StoryFn<{
+  dense: boolean;
+  disablePadding: boolean;
+  subheader: string;
+}> = (args) => (
+  <List
+    dense={args.dense}
+    disablePadding={args.disablePadding}
+    subheader={
+      args.subheader ? (
+        <StickySubheader>{args.subheader}</StickySubheader>
+      ) : null
+    }
+  >
     <ListItem button>
       <ListItemIcon>
-        <InboxIcon />
+        <Inbox />
       </ListItemIcon>
       <ListItemText primary="Inbox" />
     </ListItem>
     <Divider />
     <ListItem button>
       <ListItemIcon>
-        <StarIcon />
+        <Star />
       </ListItemIcon>
       <ListItemText primary="Starred" />
     </ListItem>
     <Divider />
     <ListItem button>
       <ListItemIcon>
-        <MailIcon />
+        <Mail />
       </ListItemIcon>
       <ListItemText primary="Send email" />
     </ListItem>
     <Divider />
     <ListItem button>
       <ListItemIcon>
-        <DraftsIcon />
+        <Drafts />
       </ListItemIcon>
       <ListItemText primary="Drafts" />
     </ListItem>
@@ -100,25 +119,25 @@ export const InteractiveList = () => (
   <List>
     <ListItem button>
       <ListItemIcon>
-        <InboxIcon />
+        <Inbox />
       </ListItemIcon>
       <ListItemText primary="Inbox" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <StarIcon />
+        <Star />
       </ListItemIcon>
       <ListItemText primary="Starred" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <MailIcon />
+        <Mail />
       </ListItemIcon>
       <ListItemText primary="Send email" />
     </ListItem>
     <ListItem button>
       <ListItemIcon>
-        <DraftsIcon />
+        <Drafts />
       </ListItemIcon>
       <ListItemText primary="Drafts" />
     </ListItem>
