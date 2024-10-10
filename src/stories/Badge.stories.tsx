@@ -8,6 +8,8 @@ import withThemeProvider from "./withThemeProvider";
 // Setting display names for better debugging
 (Badge as React.ForwardRefExoticComponent<any>).displayName = "Badge";
 (Box as React.ForwardRefExoticComponent<any>).displayName = "Box";
+(MailIcon as React.FunctionComponent<any>).displayName = "MailIcon"; // Setting display name for debugging
+(NotificationsIcon as React.FunctionComponent<any>).displayName = "NotificationsIcon"; // Setting display name for debugging
 
 export default {
   title: "Components/Badge",
