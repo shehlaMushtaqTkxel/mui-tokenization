@@ -11,6 +11,12 @@ import withThemeProvider from "./withThemeProvider";
 import React from "react";
 
 // Define enhanced styles for the modal box
+(Modal as React.ForwardRefExoticComponent<any>).displayName = "Modal";
+(Box as React.ForwardRefExoticComponent<any>).displayName = "Box";
+(Button as React.ForwardRefExoticComponent<any>).displayName = "Button";
+(Typography as React.ForwardRefExoticComponent<any>).displayName = "Typography";
+(Fade as React.ForwardRefExoticComponent<any>).displayName = "Fade";
+(Backdrop as React.ForwardRefExoticComponent<any>).displayName = "Backdrop";
 const style = {
   position: 'absolute',
   top: '50%',
