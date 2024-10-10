@@ -7,6 +7,7 @@ import withThemeProvider from "./withThemeProvider";
 // Setting display names for better debugging
 (Chip as React.ForwardRefExoticComponent<any>).displayName = "Chip";
 (Stack as React.ForwardRefExoticComponent<any>).displayName = "Stack";
+(FaceIcon as React.FunctionComponent<any>).displayName = "FaceIcon"; // Setting display name for debugging
 
 export default {
   title: "Components/Chip",
