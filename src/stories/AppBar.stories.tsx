@@ -70,7 +70,7 @@ const Template: StoryFn<typeof AppBar> = (args) => {
         </Toolbar>
       </AppBar>
       <Collapse in={open}>
-        <Paper sx={{ padding: 2 }}>
+        <Paper>
           <Typography variant="body1">Additional Content Here</Typography>
         </Paper>
       </Collapse>
